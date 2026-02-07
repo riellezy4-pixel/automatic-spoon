@@ -9,14 +9,12 @@
         :root { --pink: #ff85a1; --soft: #fff5f7; --text: #4a4a4a; }
         body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--soft); color: var(--text); overflow-x: hidden; }
         
-        /* Access Screen */
         #lock { position: fixed; inset: 0; background: white; z-index: 100; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         input { padding: 12px; border: 2px solid var(--pink); border-radius: 25px; margin: 10px; outline: none; text-align: center; font-size: 16px; }
         
         .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; text-align: center; }
         h1 { font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: var(--pink); }
         
-        /* Buttons */
         .btn-group { margin-top: 30px; position: relative; height: 120px; }
         button { padding: 15px 35px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; transition: 0.3s; touch-action: manipulation; }
         #yesBtn { background: var(--pink); color: white; font-size: 1.2rem; position: relative; z-index: 10; }
@@ -24,7 +22,6 @@
 
         #content { display: none; opacity: 0; transition: 1s; }
         
-        /* The Letter Box */
         .letter-paper { 
             background: white; 
             padding: 30px; 
@@ -67,7 +64,7 @@
             <h1>For You, Always 🤍</h1>
 
             <div class="spotify-container">
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1yYmP6pG9vX9YvS9vX9YvS" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/track/4mc3rUoMwwiNTHA4al9nNd?si=FjiiHQGYRpyh8JVtXS2OoA" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
 
             <div class="letter-paper" id="letterText"></div>
@@ -77,12 +74,27 @@
     </div>
 
     <script>
-        // PASTE YOUR FULL LETTER BETWEEN THE BACKTICKS BELOW
         const fullLetter = `My love,
 
-I’ve been thinking about you a lot lately, about how you walked into my life in the most unexpected way and somehow made everything feel lighter. There are days when the world feels loud and heavy, and then there’s you—your laugh, your presence, the calm you bring even when things get messy. 
+I’ve been thinking about you a lot lately, about how you walked into my life in the most unexpected way and somehow made everything feel lighter. There are days when the world feels loud and heavy, and then there’s you—your laugh, your presence, the calm you bring even when things get messy. I don’t always say this out loud, but having you in my life is one of the things I’m most grateful for. You remind me that love doesn’t have to be perfect to be real. It just has to be honest.
 
-(I've kept this short so you can paste your full beautiful text here!)
+Thank you for choosing me every day, even on the days when I’m not at my best. Thank you for being patient when I’m moody, tired, or quiet. Thank you for listening to my stories, even the random ones that don’t always make sense. Thank you for caring about the small details—how I’m feeling, what made me smile, what made my day hard. Those little things might seem simple, but they mean so much to me. They make me feel seen, heard, and understood.
+
+I love how you make ordinary moments feel special. The simple talks, the jokes we share, the times we just sit and exist together—those moments are my favorite. They remind me that love isn’t only about big gestures. It’s about choosing to show up, choosing to care, choosing to stay kind even when things aren’t easy. With you, I’ve learned that comfort can be beautiful. I’ve learned that peace can feel like home.
+You inspire me to be better—not in a pressured way, but in a gentle way.
+
+You make me want to grow, to be more patient, to be more understanding, to be braver with my feelings. When I doubt myself, you remind me of my worth. When I’m scared to try, you encourage me to take the step anyway. You don’t just love me; you believe in me, and that’s something I hold close to my heart.
+
+I know we’re both still learning. We’re learning how to communicate, how to handle misunderstandings, how to be there for each other when life gets tough. There will be days when we don’t agree, days when we’re tired, days when emotions run high. But I want you to know that I choose to work through those days with you. I choose patience over pride. I choose honesty over silence. I choose us, not because we’re perfect, but because we’re willing to grow together.
+
+If I ever get quiet, please know it doesn’t mean I love you any less. Sometimes my heart just needs a moment to breathe. And if you ever feel unsure, I hope you remember this: you matter to me. Your feelings matter to me. Your dreams matter to me. I care about the things that make you excited, the things that worry you, and the things you’re still figuring out. I want to be someone who supports you, not someone who holds you back.
+
+I admire your strength, even when you don’t see it in yourself. I admire how you try, how you keep going, how you show up for the people you care about. You don’t have to be perfect for me to love you. I love you for who you are, for the effort you give, for the heart you carry. And on the days you feel like you’re not enough, I hope you hear my voice in your mind telling you that you are more than enough.
+Being with you makes me hopeful about the future—not in a pressured way, but in a gentle, steady way. I imagine more shared laughs, more late-night talks, more quiet moments where everything feels okay because we’re together. I don’t know exactly what tomorrow will bring, but I know I want to face it with you by my side, learning, growing, and choosing each other again and again.
+
+Thank you for being my safe place. Thank you for being my comfort. Thank you for being my favorite person to talk to when my day has been long. Thank you for reminding me that love can be kind, patient, and real. I promise to keep trying to be someone who listens, who understands, and who shows love not just with words, but with actions.
+
+No matter how busy life gets, no matter how loud the world becomes, I hope you always remember this: you are important to me. You are valued. You are cared for deeply. I’m proud of you for who you are and for who you’re becoming. And I’m grateful that out of all the people in this world, I get to walk this part of life with you.
 
 With all my love,
 Always yours 🤍`;
@@ -113,7 +125,8 @@ Always yours 🤍`;
                 if (i < fullLetter.length) {
                     target.textContent += fullLetter.charAt(i);
                     i++;
-                    setTimeout(type, 35);
+                    setTimeout(type, 30);
+                    if (i % 5 === 0) window.scrollTo(0, document.body.scrollHeight);
                 }
             }
             type();
